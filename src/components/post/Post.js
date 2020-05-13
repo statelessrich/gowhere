@@ -5,7 +5,7 @@ export default function Post({ city, user, text }) {
   return (
     <div className="post">
       <Card>
-        {city && <Card.Header>{city}</Card.Header>}
+        {city && <Card.Header className="post-city">{city}</Card.Header>}
         <Card.Body>
           <Card.Title>{user}</Card.Title>
           <Card.Text>{text}</Card.Text>

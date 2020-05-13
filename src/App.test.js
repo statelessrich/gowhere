@@ -1,15 +1,20 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import store from './app/store';
-import App from './App';
+import React from "react";
+import { Provider } from "react-redux";
+import { mount } from "enzyme";
+import store from "./redux/store";
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+import App from "./App";
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+describe("App Component", () => {
+  let props;
+  beforeEach(() => {});
+
+  it("renders home page without crashing", () => {
+    const wrapper = mount(
+      <Provider store={store}>
+        <App {...props} />
+      </Provider>,
+    );
+    expect(wrapper.find("Home").length).toBe(1);
+  });
 });

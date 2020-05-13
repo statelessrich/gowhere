@@ -1,9 +1,9 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Home from "./Home";
+import City from "./City";
 
-describe("Home Component", () => {
+describe("City Component", () => {
   const props = {};
 
   beforeEach(() => {
@@ -40,8 +40,15 @@ describe("Home Component", () => {
     ];
   });
 
-  it("renders posts", () => {
-    const wrapper = mount(<Home {...props} />);
-    expect(wrapper.find("Post").length).toBe(3);
+  it("renders posts for valid city", () => {
+    props.match = { params: { name: "Orlando" } };
+    const wrapper = mount(<City {...props} />);
+    expect(wrapper.find("Post").length).toBe(2);
+  });
+
+  it("renders error for invalid city", () => {
+    props.match = { params: { name: "potato" } };
+    const wrapper = mount(<City {...props} />);
+    expect(wrapper.text()).toMatch(/Error/);
   });
 });

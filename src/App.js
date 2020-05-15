@@ -14,7 +14,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   return (
-    <div className="App">
+    <div className="app">
       <Header cities={cities}></Header>
       {/* home page. */}
       <Route

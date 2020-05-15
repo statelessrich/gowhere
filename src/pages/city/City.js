@@ -2,6 +2,8 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Post from "../../components/post/Post";
 
+import "./city.scss";
+
 export default function City({ match, posts, cities }) {
   // city/:name
   const { name } = match.params;
@@ -20,7 +22,15 @@ export default function City({ match, posts, cities }) {
     <div className="page city">
       {city && cityPosts.length > 0 ? (
         <Container>
-          {city.name}
+          <div
+            className="city-header"
+            // style={{
+            //   "background-image": 'url("../../img/cities/Orlando.jpg")',
+            // }}
+          >
+            <div className="overlay"></div>
+            <h2 className="city-name">{city.name}</h2>
+          </div>
           {cityPosts.map((post) => (
             <Post key={post.id} user={post.user} text={post.text}></Post>
           ))}

@@ -1,7 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
-@import "./variables.scss";
+@import "variables.scss";
+
+html,
+body,
+.root,
+.app {
+  height: 100%;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+
+  .page {
+    background-color: $light-gray;
+    padding: 2rem 1rem;
+  }
+
+  .overlay {
+    background-color: $black;
+    opacity: 0.3;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
 }

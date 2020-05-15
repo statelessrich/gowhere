@@ -1,0 +1,63 @@
+@import "../../styles/variables.scss";
+
+.header {
+  height: 400px;
+  background-image: url("../../img/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .header-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 13rem;
+  }
+
+  .title {
+    color: $white;
+    font-weight: lighter;
+  }
+
+  .search-container {
+    padding-top: 2rem;
+    width: 90%;
+    margin: 0 auto;
+
+    .search-input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .search-icon {
+        position: absolute;
+        left: 1rem;
+        z-index: 1;
+      }
+
+      .search {
+        width: 100%;
+
+        input {
+          padding-left: 2.5rem;
+          background-color: rgba(255, 255, 255, 0.7);
+          border-radius: 0;
+          color: $black;
+
+          &::placeholder {
+            color: $black;
+            opacity: 1;
+          }
+
+          &:-ms-input-placeholder {
+            color: $black;
+          }
+
+          &::-ms-input-placeholder {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

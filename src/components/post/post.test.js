@@ -14,6 +14,6 @@ describe("Post Component", () => {
 
   it("renders a post", () => {
     const wrapper = mount(<Post {...props} />);
-    expect(wrapper.text()).toBe("OrlandoRichardThis is my post about orlando.");
+    expect(wrapper.text()).toBe("Orlando RichardThis is my post about orlando.");
   });
 });

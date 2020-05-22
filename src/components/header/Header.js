@@ -9,6 +9,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import "./header.scss";
+import "./header-desktop.scss";
 
 export default function Header({ cities }) {
   const history = useHistory();

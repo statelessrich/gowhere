@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Post from "../../components/post/Post";
 
 import "./city.scss";
+import "./city-desktop.scss";
 
 export default function City({ match, posts, cities }) {
   // city/:name
@@ -21,12 +22,12 @@ export default function City({ match, posts, cities }) {
   return (
     <div className="page city">
       {city && cityPosts.length > 0 ? (
-        <Container>
+        <Container className="city-content">
           <div
             className="city-header"
-            // style={{
-            //   "background-image": 'url("../../img/cities/Orlando.jpg")',
-            // }}
+            style={{
+              backgroundImage: `url("/static/img/cities/${city.name}.jpg")`,
+            }}
           >
             <div className="overlay"></div>
             <h2 className="city-name">{city.name}</h2>

@@ -1,0 +1,14 @@
+@media (min-width: 1224px) {
+  .city-header {
+    height: 350px;
+
+    .city-name {
+      padding: 0px 3rem;
+      font-size: 4rem;
+    }
+  }
+
+  .container.city-content {
+    max-width: 850px;
+  }
+}

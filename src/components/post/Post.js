@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,10 +12,15 @@ export default function Post({ city, user, text }) {
         {city && <div className="post-city">{city}</div>}
         <Card.Body>
           <Card.Title>
-            <span className="user-avatar">
-              <FontAwesomeIcon size="xs" color="white" icon={faUser} />
-            </span>{" "}
-            {user}
+            <span
+              style={{
+                backgroundImage: `url("/static/img/users/${user}.jpg")`,
+              }}
+              className="user-avatar"
+            >
+              {/* <FontAwesomeIcon size="xs" color="white" icon={faUser} /> */}
+            </span>
+            <span className="username">{user}</span>
           </Card.Title>
           <Card.Text>{text}</Card.Text>
         </Card.Body>

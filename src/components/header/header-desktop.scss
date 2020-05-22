@@ -1,0 +1,29 @@
+@media (min-width: 1224px) {
+  .header {
+    height: 100vh;
+
+    .header-content {
+      padding-top: 18rem;
+
+      .title {
+        font-size: 3rem;
+      }
+
+      .search-container {
+        width: 50%;
+
+        .search-icon {
+          font-size: 1.5rem;
+        }
+
+        .search-input-container {
+          input {
+            height: 60px;
+            padding-left: 3.5rem;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

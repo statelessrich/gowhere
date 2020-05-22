@@ -1,6 +1,9 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {
+  // useDispatch,
+  useSelector,
+} from "react-redux";
 
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
@@ -11,7 +14,7 @@ import "./styles/global.scss";
 export default function App() {
   const cities = useSelector((state) => state.cityReducer.cities);
   const posts = useSelector((state) => state.postReducer.posts);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <div className="app">

@@ -1,4 +1,4 @@
-import * as types from "../actions/types";
+// import * as types from "../actions/types";
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {

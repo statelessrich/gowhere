@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -11,8 +12,11 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 import "./header.scss";
 import "./header-desktop.scss";
 
-export default function Header({ cities }) {
+export default function Header() {
   const history = useHistory();
+  const cities = useSelector((state) => state.cityReducer.cities);
+  const isLoading = useSelector((state) => state.cityReducer.isLoading);
+  const error = useSelector((state) => state.cityReducer.error);
 
   return (
     <div className="header text-center">
@@ -20,6 +24,8 @@ export default function Header({ cities }) {
       <Container className="header-content">
         <h1 className="title">gowhere</h1>
         <div className="search-container">
+          {error}
+
           <div className="search-input-container">
             <div className="search-icon">
               <FontAwesomeIcon icon={faSearch} />
@@ -29,16 +35,18 @@ export default function Header({ cities }) {
               placeholder="search"
               className="search"
               onChange={(selected) => {
-                selected.length > 0 && history.push(`/city/${selected}`);
+                selected &&
+                  selected.length > 0 &&
+                  history.push(`/city/${selected}`);
               }}
-              options={cities.map((city) => city.name)}
+              options={cities.length > 0 && cities.map((city) => city.name)}
               renderInput={(inputProps) => (
                 <Form.Control size="lg" type="text" {...inputProps} />
               )}
             />
           </div>
         </div>
-      </Container>
+      </Container>{" "}
     </div>
   );
 }

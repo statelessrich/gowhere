@@ -1,8 +1,10 @@
 import axios from "axios";
+import endpoints from "./endpoints";
 
 export function getCities() {
-  axios
-    .get("./data.json")
-    .then((data) => console.log(data))
-    .catch((e) => console.log(e));
+  return axios.get(endpoints.cities.get);
+}
+
+export function getPosts() {
+  return axios.get(endpoints.posts.get);
 }

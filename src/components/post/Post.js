@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import "./post.scss";
 

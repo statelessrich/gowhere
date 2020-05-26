@@ -1,41 +1,40 @@
-// import * as types from "../actions/types";
+import {
+  FETCH_CITIES_BEGIN,
+  FETCH_CITIES_SUCCESS,
+  FETCH_CITIES_ERROR,
+} from "../actions/cityActions";
 
-export default function reducer(state = initialState, action) {
+const initialState = {
+  cities: [],
+  isLoading: false,
+  error: null,
+};
+
+export default function cityReducer(state = initialState, action) {
   switch (action.type) {
+    case FETCH_CITIES_BEGIN:
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+
+    case FETCH_CITIES_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        cities: action.payload.cities,
+      };
+
+    case FETCH_CITIES_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload.error,
+        cities: [],
+      };
+
     default:
       return state;
   }
 }
-
-const initialState = {
-  cities: [
-    {
-      id: 1,
-      name: "Orlando",
-      posts: [
-        {
-          id: 1,
-          user: "Richard",
-          text: "This is my post about orlando.",
-        },
-        {
-          id: 2,
-          user: "Richard",
-          text: "second post.",
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: "Miami",
-      posts: [
-        {
-          id: 1,
-          user: "Richard",
-          text: "This is my post about miami.",
-        },
-      ],
-    },
-    // { id: 3, name: "St. Petersburg" ,posts:[]},
-  ],
-};

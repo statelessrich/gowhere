@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "city": "Orlando",
+      "user": "Richard",
+      "text": "Ex voluptate labore exercitation ex quis qui do cillum sit culpa cupidatat mollit. Tempor adipisicing ad tempor occaecat nostrud incididunt cillum ullamco fugiat nulla esse ipsum aliquip. Ea laborum cupidatat mollit exercitation. Eu eiusmod nulla commodo minim et velit esse eu. Commodo ipsum occaecat quis anim excepteur elit voluptate. Lorem culpa culpa laborum tempor. Eu excepteur Lorem magna fugiat nostrud sint exercitation officia est. Labore ut dolor exercitation cillum sit mollit velit sit nisi est incididunt. Reprehenderit do nulla veniam officia occaecat ea ad ea eiusmod mollit pariatur ad ea."
+    },
+    {
+      "id": 2,
+      "city": "Orlando",
+      "user": "Richard",
+      "text": "second post."
+    },
+    {
+      "id": 3,
+      "city": "Miami",
+      "user": "Richard",
+      "text": "This is my post about miami."
+    }
+  ]
+}
